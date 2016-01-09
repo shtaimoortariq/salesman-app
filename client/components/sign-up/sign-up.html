@@ -1,0 +1,120 @@
+<div>
+
+    <!--Header Content-->
+
+    <header>
+
+        <md-toolbar md-scroll-shrink ng-if="true">
+            <div class="md-toolbar-tools">
+                <i class="mdi mdi-account"> </i>
+                <h3>
+                    <span>Sale's Man</span>
+                </h3>
+            </div>
+        </md-toolbar>
+
+    </header>
+
+
+
+    <!--Body Content-->
+
+    <article>
+
+        <form name="signUpForm" style="width: 50%">
+
+
+            <md-content class="autoScroll" layout="column">
+
+                <span layout="row">
+                <md-input-container class="md-icon-float md-block" flex="50">
+                    <!-- Use floating label instead of placeholder -->
+                    <label><i class="mdi mdi-account"></i> First Name</label>
+                    <input ng-model="user.fName" type="text" name="fName" required>
+
+                    <span ng-show="signUpForm.fName.$invalid && signUpForm.fName.$dirty">
+                        <p ng-show="signUpForm.fName.$error.required" class="required">First Name is required</p>
+                    </span>
+
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block" flex="50">
+                    <!-- Use floating label instead of placeholder -->
+                    <label><i class="mdi mdi-account"></i> Last Name</label>
+                    <input ng-model="user.lName" type="text" name="lName" required>
+
+                    <span ng-show="signUpForm.lName.$invalid && signUpForm.lName.$dirty">
+                        <p ng-show="signUpForm.lName.$error.required" class="required">Last Name is required</p>
+                    </span>
+
+
+                </md-input-container>
+                </span>
+
+                <md-input-container class="md-block">
+                    <!-- Use floating placeholder instead of label -->
+                    <label><i class="mdi mdi-email"></i> Email</label>
+                    <input ng-model="user.email" type="email" name="email" required>
+
+                    <span>
+                        <span class="required" ng-show="signUpForm.email.$invalid && signUpForm.email.$dirty">
+                        <p ng-show="signUpForm.email.$error.required" class="signUp_required">Email is required</p>
+                        <p ng-show="signUpForm.email.$error.email" class="signUp_required">Invalid email address</p>
+                        </span>
+                    </span>
+
+                </md-input-container>
+
+
+                <md-input-container md-no-float class="md-block">
+
+                    <label><i class="mdi mdi-lock"></i> Password</label>
+                    <input ng-model="user.pass" type="password" name="pass" required>
+
+                    <span ng-show="signUpForm.pass.$invalid && signUpForm.pass.$dirty">
+                        <p ng-show="signUpForm.pass.$error.required" class="signUp_required">Password is required</p>
+                    </span>
+
+                </md-input-container>
+
+                <!--<md-input-container md-no-float class="md-block">
+                    <label><i class="mdi mdi-lock"></i> Confirm Password</label>
+                    <input ng-model="user.cPass" type="password" name="cPass" required>
+                    <span ng-show="signUpForm.cPass.$invalid && signUpForm.cPass.$dirty">
+                        <p ng-show="signUpForm.cPass.$error.required" class="signUp_required">Confirm Password is required</p>
+                    </span>
+                    <span ng-show="cPassMatch" class="signUp_required">Password not Matched</span>
+                    http://jsfiddle.net/thomporter/UZrex/1/
+                </md-input-container>-->
+
+
+                <md-input-container md-no-float class="md-block">
+                    <label><i class="mdi mdi-phone"></i> Phone Number</label>
+                    <input ng-model="user.phone" type="number" name="phone" required>
+
+                    <span ng-show="signUpForm.phone.$invalid && signUpForm.phone.$dirty">
+                        <p ng-show="signUpForm.phone.$error.required" class="signUp_required">Phone Number is required</p>
+                    </span>
+
+                </md-input-container>
+
+                <md-input-container md-no-float class="md-block">
+                    <label><i class="mdi mdi-map-marker"></i> Address</label>
+                    <input ng-model="user.address" type="text" name="address" required>
+
+                    <span ng-show="signUpForm.address.$invalid && signUpForm.address.$dirty">
+                        <p ng-show="signUpForm.address.$error.required" class="signUp_required">Address is required</p>
+                    </span>
+
+                </md-input-container>
+
+            </md-content>
+            <!--ng-disabled="signUpForm.$invalid"-->
+            <md-button class="md-raised md-primary"  ng-click="ctrl.signUp()">Create Account</md-button>
+        </form>
+
+    </article>
+
+
+
+</div>

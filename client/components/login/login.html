@@ -1,0 +1,76 @@
+
+
+<div>
+
+    <!--Header Content-->
+
+    <header>
+
+        <md-toolbar md-scroll-shrink ng-if="true">
+            <div class="md-toolbar-tools">
+                <!--<md-icon md-svg-icon="./images/logo.png"></md-icon>-->
+                <i class="mdi mdi-account"> </i>
+                <h3>
+                    <span>Sale's Man</span>
+                </h3>
+            </div>
+        </md-toolbar>
+
+    </header>
+
+
+    <!--Body Content-->
+
+
+<article>
+
+    <form name="loginForm">
+            <md-content class="autoScroll">
+                <md-input-container class="md-icon-float md-block">
+                    <label><i class="mdi mdi-email"></i> Email </label>
+                    <input ng-model="user.email" type="email" name="email" required>
+
+                    <span>
+                        <span class="required" ng-show="loginForm.email.$invalid && loginForm.email.$dirty">
+                        <p ng-show="loginForm.email.$error.required" class="required">Email is required</p>
+                        <p ng-show="loginForm.email.$error.email" class="required">Invalid email address</p>
+                        </span>
+                    </span>
+
+                </md-input-container>
+
+
+                <md-input-container class="md-icon-float md-block">
+                    <label><i class="mdi mdi-lock"></i> Password </label>
+                    <input ng-model="user.pass" type="password" name="pass" required>
+
+                    <span ng-show="loginForm.pass.$invalid && loginForm.pass.$dirty">
+                        <p ng-show="loginForm.pass.$error.required" class="required">Password is required</p>
+                    </span>
+
+                </md-input-container>
+
+                 <span ng-hide="ctrl.loader" >
+                    <md-progress-circular md-mode="indeterminate" class="center_align" md-diameter="100" ></md-progress-circular>
+                </span>
+
+                <md-button class="md-raised md-primary" ng-disabled="loginForm.$invalid" style="width: 95%" ng-click="ctrl.login()">Sign In</md-button>
+
+
+            </md-content>
+    </form>
+
+</article>
+
+
+
+
+
+
+    <!--Footer Content -->
+
+    <footer>
+
+    </footer>
+
+</div>
