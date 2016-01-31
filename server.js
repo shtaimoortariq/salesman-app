@@ -2,12 +2,12 @@
  * Created by Taimoor tariq on 1/1/2016.
  */
 
-var express = require("express");
-var path = require("path");
-var morgan = require("morgan");
-var bodyParser = require("body-parser");
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
+var express = require("./client/node_modules/express");
+var path = require("./client/node_modules/path");
+var morgan = require("./client/node_modules/morgan");
+var bodyParser = require("./client/node_modules/body-parser");
+var mongoose = require('./client/node_modules/mongoose');
+var bcrypt = require('./client/node_modules/bcrypt-nodejs');
 var app = express();
 var SALT_WORK_FACTOR = 10;
 app.use(morgan("short"));
